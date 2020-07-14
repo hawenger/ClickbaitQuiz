@@ -35,11 +35,25 @@
 }
  /*HUD*/
 
-#hud {
+ .timer-container {
+     width: 100%;
      display: flex;
-     justify-content: space-between;
+     justify-content: center;
+ }
+ .time {
+    display: inline-flex;
+    font-size: 8rem;
+    padding-bottom: 4rem;
  }
 
+#hud {
+    display: flex;
+    justify-content: space-between;
+ }
+
+ #hud-item {
+    margin-top: 2rem;
+}
  .hud-prefix {
      text-align: center;
      font-size: 2rem;
