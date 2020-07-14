@@ -11,7 +11,7 @@ let acceptedAnswers = true;
 let score = 0;
 let questionCounter = 0;
 let availableQuestions = [];
-let secondsLeft = 180;
+let secondsLeft = 60;
 
 let questions = [
     {
@@ -34,7 +34,7 @@ let questions = [
         question: "Which one of these people was involved in the founding of the internet?",
         choice1:"Bob Vance",
         choice2:"Paul Anka",
-        choice3:"Mads Mikkelsen",
+        choice3:"Matt Hannon",
         choice4:"Vint Cerf",
         answer: 4
     },
@@ -53,6 +53,59 @@ let questions = [
         choice3:"Unix",
         choice4:"AmigaOS 2.0",
         answer: 3
+    },
+    {
+        question: "Which cartoon once offered free email service?",
+        choice1:"Garfield",
+        choice2:"Calvin & Hobbes",
+        choice3:"Bugs Bunny",
+        choice4:"Opus",
+        answer: 1
+    },
+    {
+        question: "What was the first webcam used for?",
+        choice1:"Monitoring a pot of coffee",
+        choice2:"Monitoring a dorm hallway",
+        choice3:"Monitoring a busy street",
+        choice4:"Monitoring the growth of a bean plant",
+        answer: 1
+    },
+    {
+        question: "What is 'Internet' short for?",
+        choice1:"Into Ethernet",
+        choice2:"Intrigue & Capture",
+        choice3:"Inter-system Networking",
+        choice4:"Inter-Network-Ethernet",
+        answer: 3
+    },
+    {
+        question: "_ marriages today occur because couples met online.",
+        choice1:"One in twenty",
+        choice2:"One in Eight",
+        choice3:"A third of",
+        choice4:"One in six",
+        answer: 4
+    },    {
+        question: "Who is credited with inventing email?",
+        choice1:"Douglas Mitchell",
+        choice2:"Anh Nguyen",
+        choice3:"Moses Kamara",
+        choice4:"Ray Tomlinson",
+        answer: 4
+    },    {
+        question: "This failed meet-up app birthed Instagram.",
+        choice1:"Burbn",
+        choice2:"Odeo",
+        choice3:"YouMeWE",
+        choice4:"Hiper",
+        answer: 1
+    },    {
+        question: "Google was almost called...",
+        choice1:"Bugle",
+        choice2:"Quester",
+        choice3:"BackRub",
+        choice4:"HeadSplode",
+        answer: 3
     }
 
 ];
@@ -61,7 +114,7 @@ let questions = [
 //CONSTANTS
 
 const points = 25;
-const maxQuestions = 3;
+const maxQuestions = 12;
 const subtractSeconds = 10;
 
 function setTime() {
@@ -70,9 +123,10 @@ function setTime() {
       secondsLeft--;
       timeEl.textContent = secondsLeft;
 
-      if(secondsLeft === 0) {
+      if(secondsLeft <= 0) {
         clearInterval(timerInterval);
-        return window.location.assign('/end.html');
+        localStorage.setItem('mostRecentScore', score);
+        return window.location.assign('../html/end.html');
       }
     }, 1000);
   };
@@ -91,7 +145,7 @@ getNewQuestion = () => {
 
     if(availableQuestions.length === 0 || questionCounter >= maxQuestions) {
         localStorage.setItem('mostRecentScore', score);
-        return window.location.assign('/end.html');
+        return window.location.assign('../html/end.html');
     }
 
     questionCounter++;
@@ -127,7 +181,7 @@ choices.forEach(choice => {
         if(classToAppyly === 'correct') {
             incrementScore(points);
         } else {
-            secondsLeft = secondsLeft - 15;
+            secondsLeft = secondsLeft - 10;
         };
         console.log(acceptedAnswers);
 
