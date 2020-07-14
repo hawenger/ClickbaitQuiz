@@ -3,12 +3,15 @@ const choices = Array.from(document.getElementsByClassName("choice-text"));
 const progressText = document.getElementById('progress-text');
 const scoreText = document.getElementById('score');
 const progressBarFull = document.getElementById('progress-bar-full');
+let timeEl = document.querySelector(".time");
+let mainEl = document.getElementById("main");
 
 let currentQuestion = {};
 let acceptedAnswers = true;
 let score = 0;
 let questionCounter = 0;
 let availableQuestions = [];
+let secondsLeft = 180;
 
 let questions = [
     {
@@ -59,6 +62,22 @@ let questions = [
 
 const points = 25;
 const maxQuestions = 3;
+const subtractSeconds = 10;
+
+function setTime() {
+
+    let timerInterval = setInterval(function() {
+      secondsLeft--;
+      timeEl.textContent = secondsLeft;
+
+      if(secondsLeft === 0) {
+        clearInterval(timerInterval);
+        return window.location.assign('/end.html');
+      }
+    }, 1000);
+  };
+  
+  setTime();
 
 startGame = () => {
     questionCounter = 0;
@@ -68,31 +87,15 @@ startGame = () => {
 
 };
 
-function setTime() {
-    let secondsLeft = 180;
-    let timerInterval = setInterval(function() {
-      secondsLeft--;
-      timeEl.textContent = secondsLeft;
-  
-      if(secondsLeft === 0) {
-        clearInterval(timerInterval);
-        sendMessage();
-      }
-  
-    }, 1000);
-  };
-  
-  setTime();
-
 getNewQuestion = () => {
 
-    if(availableQuestions.length === 0 || questionCounter >= maxQuestions || setTime === 0) {
+    if(availableQuestions.length === 0 || questionCounter >= maxQuestions) {
         localStorage.setItem('mostRecentScore', score);
         return window.location.assign('/end.html');
     }
 
     questionCounter++;
-    progressText.innerText = 'Question' + questionCounter + '/' + maxQuestions;
+    progressText.innerText = 'Question ' + questionCounter + ' / ' + maxQuestions;
     //Update progress bar
     progressBarFull.style.width = `${(questionCounter / maxQuestions) * 100}%`;
 
@@ -123,9 +126,10 @@ choices.forEach(choice => {
 
         if(classToAppyly === 'correct') {
             incrementScore(points);
-        }
-        //console.log(classToAppyly);
-        //console.log(selectedAnswer == currentQuestion.answer);
+        } else {
+            secondsLeft = secondsLeft - 15;
+        };
+        console.log(acceptedAnswers);
 
         selectedChoice.parentElement.classList.add(classToAppyly);
         setTimeout( () => {
@@ -139,12 +143,5 @@ incrementScore = num => {
     score += num;
     scoreText.innerText = score;
 };
-
-let timeEl = document.querySelector(".time");
-let mainEl = document.getElementById("main");
-
-
-
-
 
 startGame();

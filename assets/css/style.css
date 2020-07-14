@@ -1,11 +1,14 @@
 :root {
-    background-color: #ecf5ff;
+    background-color:  #2a94ac;
+
+
+    
     font-size: 62.5%; /*Sets default font size to eq. 10px meaning rem like 4.2 = 42 px*/
 }
 
 * {
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     margin: 0;
     padding: 0;
     color: #333;
@@ -21,8 +24,7 @@ h4 {
 
 h1 {
     font-size: 5.4rem;
-    color: #56a5eb;
-    margin-bottom: 5rem;
+    color: rgba(215, 207, 71, 0.75);
 }
 
 h1 > span {
@@ -31,9 +33,12 @@ h1 > span {
 }
 
 h2 {
-    font-size: 4.2rem;
-    margin: 1rem 0 4rem 0;
+    font-size: 3rem;
+    margin: 2rem 0 2rem 0;
     font-weight: 700;
+    color: white;
+    font-family: 'arial narrow', Arial, sans-serif;
+    padding: 0 1rem;
 }
 
 h3 {
@@ -51,11 +56,14 @@ h3 {
     align-items: center;
     max-width: 80rem;   /*combined w margin keeps thing centered on page on larger screens!*/
     margin: 0 auto;
-    padding: 2rem;
+    padding: 0;
+    background-color: rgba(215, 207, 71, 0.75);
 }
 
 .container > * { /*children of container*/
     width: 100%;
+    background-color: rgba(42, 148, 172, 0.81);
+    border: 1rem solid rgba(215, 207, 71, 0.75);
 }
 
 .flex-column {
@@ -87,10 +95,10 @@ h3 {
     padding: 1rem 0;
     width: 20rem;
     text-align: center;
-    border: 0.1rem solid #56a5eb;
+    border: 0.1rem solid #2a94ac;
     margin-bottom: 1rem;
     text-decoration: none;
-    color: #56a5eb;
+    color: #2a94ac;
     background-color: white;
 
 }
@@ -106,4 +114,32 @@ h3 {
     cursor: not-allowed;
     box-shadow: none;
     transform: none;
+}
+@media(min-width: 43rem) {
+
+ h2 {
+     font-size: 4rem;
+     margin: 3rem 0 3rem 0;
+ }
+}
+
+@media(min-width: 62rem) {
+    .container > * {
+        border: none;
+    }
+    
+    :root {
+        background-color:  #2a94ac;
+        background-image: url(/assets/css/images/computerwomanbluelightblack.jpg);
+        background-position-x: -9rem;
+        background-position-y: -9rem;
+        background-repeat: no-repeat;
+    }
+    .container {
+        padding: 2rem;
+    }
+    h2 {
+        font-size: 4.2rem;
+        margin: 4rem 0 4rem 0;
+    }
 }

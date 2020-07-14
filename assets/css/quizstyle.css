@@ -3,7 +3,7 @@
     margin-bottom: 0.5rem;
     width: 100%;
     font-size: 1.8rem;
-    border: 0.1rem solid rgb(86, 165, 235, 8.25);
+    border: 0.1rem solid rgba(215, 207, 71, 0.75);
     background-color: white;
 }
 
@@ -17,7 +17,7 @@
 
 .choice-letter {
     padding: 1.5rem 2.5rem;
-    background-color: #56a5eb;
+    background-color: rgba(215, 207, 71, 0.75);
     color: white;
 }
 
@@ -27,11 +27,11 @@
 }
 
 .correct {
-    background-color: yellowgreen;
+    background-color: rgb(179, 230, 77);
 }
 
 .incorrect {
-    background-color: tomato;
+    background-color: rgb(255, 0, 64);
 }
  /*HUD*/
 
@@ -43,7 +43,8 @@
  .time {
     display: inline-flex;
     font-size: 8rem;
-    padding-bottom: 4rem;
+    margin-top: 5rem;
+    color: rgba(215, 207, 71, 0.75);
  }
 
 #hud {
@@ -53,6 +54,10 @@
 
  #hud-item {
     margin-top: 2rem;
+}
+
+.hud-item-score {
+    margin-right: 2rem;
 }
  .hud-prefix {
      text-align: center;
@@ -66,13 +71,14 @@
  #progress-bar {
      width: 20rem;
      height: 4rem;
-     border: 0.3rem solid #56a5eb;
+     border: 0.3rem solid rgba(215, 207, 71, 0.75);
      margin-top: 1.5rem;
 
  }
 
  #progress-bar-full {
      height: 3.4rem;
-     background-color: #56a5eb;
+     background-color: rgba(215, 207, 71, 0.75);
      width: 0%;
  }
+ 
