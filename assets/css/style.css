@@ -1,9 +1,7 @@
 :root {
-    background-color:  #2a94ac;
-
-
-    
-    font-size: 62.5%; /*Sets default font size to eq. 10px meaning rem like 4.2 = 42 px*/
+    background-color: #2a94ac;
+    font-size: 62.5%;
+    /*Sets default font size to eq. 10px meaning rem like 4.2 = 42 px*/
 }
 
 * {
@@ -14,9 +12,9 @@
     color: #333;
 }
 
-h1, 
-h2, 
-h3, 
+h1,
+h2,
+h3,
 h4 {
     margin-bottom: 1rem;
     text-align: center;
@@ -25,10 +23,10 @@ h4 {
 h1 {
     font-size: 5.4rem;
     color: rgba(215, 207, 71, 0.75);
-    padding-top: 5rem;
+    padding: 5rem 2rem 0 2rem;
 }
 
-h1 > span {
+h1>span {
     font-size: 2.4rem;
     font-weight: 500;
 }
@@ -47,6 +45,7 @@ h3 {
     font-weight: 500;
 }
 
+
 /*Utilities*/
 
 .container {
@@ -55,16 +54,20 @@ h3 {
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 80rem;   /*combined w margin keeps thing centered on page on larger screens!*/
+    max-width: 80rem;
+    /*combined w margin keeps thing centered on page on larger screens!*/
     margin: 0 auto;
     padding: 0;
     background-color: rgba(215, 207, 71, 0.75);
 }
 
-.container > * { /*children of container*/
+.container>* {
+    /*children of container*/
     width: 100%;
     background-color: rgba(42, 148, 172, 0.81);
-    border: 1rem solid rgba(215, 207, 71, 0.75);
+    border-left: 1rem solid rgba(215, 207, 71, 0.75);
+    border-right: 1rem solid rgba(215, 207, 71, 0.75);
+    border-top: 5rem solid #333;
 }
 
 .flex-column {
@@ -89,6 +92,7 @@ h3 {
     display: none;
 }
 
+
 /*Buttons*/
 
 .btn {
@@ -101,7 +105,6 @@ h3 {
     text-decoration: none;
     color: #2a94ac;
     background-color: white;
-
 }
 
 .btn:hover {
@@ -116,21 +119,21 @@ h3 {
     box-shadow: none;
     transform: none;
 }
-@media(min-width: 43rem) {
 
- h2 {
-     font-size: 4rem;
-     margin: 3rem 0 3rem 0;
- }
+@media(min-width: 43rem) {
+    h2 {
+        font-size: 4rem;
+        margin: 3rem 0 3rem 0;
+    }
 }
 
 @media(min-width: 62rem) {
-    .container > * {
-        border: none;
+    .container>* {
+        border-right: none;
+        border-left: none;
     }
-    
-    :root {
-        background-color:  #2a94ac;
+     :root {
+        background-color: #2a94ac;
         background-image: url(../html/assets/css/images/computerwomanbluelightblack.jpg);
         background-position-x: -9rem;
         background-position-y: -9rem;

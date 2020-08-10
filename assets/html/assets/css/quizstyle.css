@@ -8,7 +8,6 @@
 }
 
 .choice-container:hover {
-
     cursor: pointer;
     box-shadow: 0 0.4rem 1.4rem 0 rgb(86, 185, 235, 0.5);
     transform: translateY(-0.1rem);
@@ -33,52 +32,54 @@
 .incorrect {
     background-color: rgb(255, 0, 64);
 }
- /*HUD*/
 
- .timer-container {
-     width: 100%;
-     display: flex;
-     justify-content: center;
- }
- .time {
+
+/*HUD*/
+
+.timer-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.time {
     display: inline-flex;
     font-size: 8rem;
-    margin-top: 5rem;
+    margin: 1rem 0;
     color: rgba(215, 207, 71, 0.75);
- }
+}
 
 #hud {
     display: flex;
     justify-content: space-between;
- }
+}
 
- #hud-item {
+#hud-item {
     margin-top: 2rem;
 }
 
 .hud-item-score {
     margin-right: 2rem;
 }
- .hud-prefix {
-     text-align: center;
-     font-size: 2rem;
- }
 
- .hud-main-text {
+.hud-prefix {
     text-align: center;
- }
+    font-size: 2rem;
+}
 
- #progress-bar {
-     width: 20rem;
-     height: 4rem;
-     border: 0.3rem solid rgba(215, 207, 71, 0.75);
-     margin-top: 1.5rem;
+.hud-main-text {
+    text-align: center;
+}
 
- }
+#progress-bar {
+    width: 20rem;
+    height: 4rem;
+    border: 0.3rem solid rgba(215, 207, 71, 0.75);
+    margin-top: 1.5rem;
+}
 
- #progress-bar-full {
-     height: 3.4rem;
-     background-color: rgba(215, 207, 71, 0.75);
-     width: 0%;
- }
- 
+#progress-bar-full {
+    height: 3.4rem;
+    background-color: rgba(215, 207, 71, 0.75);
+    width: 0%;
+}
