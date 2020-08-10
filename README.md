@@ -1,7 +1,7 @@
 # ClickbaitQuiz
 Javascript powered clickbait quiz that leaves both user and advertiser smiling!
 
-link:
+link: https://hawenger.github.io/ClickbaitQuiz/
 image:
 
 User lands on home page where they have the option of viewing previous scores (local storage only) or playing the time quize themselves.
